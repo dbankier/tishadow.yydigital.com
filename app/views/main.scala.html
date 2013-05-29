@@ -1,0 +1,96 @@
+@(title: String, sections:List[String])(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="@routes.Assets.at("css/bootstrap.min.css")">
+        <link rel="stylesheet"href ="@routes.Assets.at("css/bootstrap-responsive.min.css")">
+        <style>
+          body {
+            font-family: "Karla"
+          }
+          .container-narrow {
+            margin: 0 auto;
+            max-width: 880px;
+          }
+          .content {
+            padding-top: 50px
+          }
+          .top-section {
+            padding: 100px 60px
+          }
+          .extra-padding {
+            padding: 40px 0px 60px
+          }
+          a {
+            color: #777777
+          }
+          .nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+              background-color: #fff;
+              color: #000000;
+              text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+          }
+          .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+              background-color: #fafafa;
+              color: #000000;
+              text-decoration: none;
+              box-shadow: none;
+          }
+          footer {
+            padding: 10px 0px 20px
+          }
+          .affix {
+            position: fixed;
+            padding-top: 70px;
+          }
+        </style>
+    </head>
+    <body data-spy="scroll" data-target=".sidebar">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="@routes.Application.index">tishadow</a>
+          <div class="nav-collapse collapse pull-right">
+            <ul class="nav">
+              @for(section <- sections) {
+              <li @if(title.contains(section)) { class="active" }><a
+                href="@routes.Application.section(section)">@section</a></li>
+              }
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+      <div class="content">
+        <div class="container-narrow">
+        @content
+      </div>
+      </div>
+      <script src="http://code.jquery.com/jquery.js"></script>
+      <script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
+    </body>
+    <hr/>
+    <footer><center>
+      <iframe
+        src="http://ghbtns.com/github-btn.html?user=dbankier&repo=tishadow&type=watch&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
+      <iframe
+        src="http://ghbtns.com/github-btn.html?user=dbankier&repo=tishadow&type=fork&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
+<a href="https://twitter.com/davidbankier" class="twitter-follow-button"
+  data-show-count="false">Follow @@davidbankier</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tishadow.yydigital.com">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</center>
+    </footer>
+</html>
