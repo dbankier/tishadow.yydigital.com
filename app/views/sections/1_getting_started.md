@@ -4,7 +4,7 @@
 tishadow is made up of three component: `server`, `app` and `cli`
 
 you use the `cli` to send your code/commands to the `server` that will push it
-out the `app` running on your devices 
+to the `app` running on your devices 
 
 
 ###cli
@@ -23,7 +23,7 @@ $ mkdir ~/tishadowapp && tishadow app -d ~/tishadowapp
 ```
 
 either import the project into titanium studio and deploy it to your
-devices or you can you the titanium cli command as follows
+devices or you can use the titanium cli command as follows
 
 ```
 $ cd ~/tishadowapp
@@ -40,8 +40,11 @@ $ tishadow server
 ```
 
 ###get going
-then connect to the server by entering the server address in the app and hitting
-`connect`
+
+connect to the server by entering the server address in the app and
+tapping `connect`
+
+you may want to have a look at @stephenfeather's [getting started series](http://www.stephenfeather.com/blog/tishadow-getting-started-part-1/)
 
 you're good to go!
 

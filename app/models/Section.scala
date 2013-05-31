@@ -7,7 +7,7 @@ import eu.henkelmann.actuarius.ActuariusTransformer
 case class Section(file:String) {
   val full_path = Config.sections_path + file
   val markdown = Source.fromFile(full_path).getLines.mkString("\n")
-  val html = new ActuariusTransformer()(markdown).replaceAll("""<h3>(.*?)</h3>""","<p class=\"content\" id=\"$1\"/><h3>$1</h3>")
+  val html = new ActuariusTransformer()(markdown).replaceAll("""<h3>(\w+)(.*?)</h3>""","<p class=\"content\" id=\"$1\"/><h3>$1$2</h3>")
   val headings = """<h3.*?>(.*?)</h3>""".r.findAllIn(html).matchData.toList.map(_.group(1))
 }
 

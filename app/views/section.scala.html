@@ -2,14 +2,14 @@
 
 @main(name, sections) {
    <div class="row">
-      <div class="span2 sidebar">
-        <ul class="nav nav-list  affix">
+      <div class="span3 sidebar">
+        <ul class="nav nav-list sidenav affix nav-collapse">
           @for(heading <- section.headings) {
-          <li><a href="#@heading"> @heading</a></li>
+          <li><a href="#@heading.split(" ")(0)"> @heading</a></li>
           }
         </ul>
       </div>
-      <div class="span7">
+      <div class="span6">
         @Html(section.html)
       </div>
     </div>
