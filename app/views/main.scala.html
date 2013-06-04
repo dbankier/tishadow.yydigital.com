@@ -8,6 +8,7 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lustria">
         <link rel="stylesheet" href="@routes.Assets.at("css/bootstrap.min.css")">
         <link rel="stylesheet"href ="@routes.Assets.at("css/bootstrap-responsive.min.css")">
         <style>
@@ -50,11 +51,36 @@
             float: left
           }
           .sidenav {
-            width: 160px 
+            width: 240px 
           }
           .nav > li > a:hover, .nav > li > a:focus {
               background-color: #FFFFFF;
               text-decoration: none;
+          }
+          .yybrand {
+              color: #ffffff;
+              background-color:#333333;
+              font-size: 13px;
+              font-weight: 200;
+              padding: 3px 4px;
+              margin: 3px;
+              border-radius: 2px;
+              font-family: "Lustria";
+          }
+          a.yybrand {
+            text-decoration: none;
+            color: #ffffff
+          }
+          .large-code {
+            background-color: #F7F7F9;
+            border: 1px solid #E1E1E8;
+            font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+            font-size: 25px;
+            padding: 35px 0;
+            text-align: center;
+          }
+          .yyblue {
+              color: #2192E3;
           }
         </style>
     </head>
@@ -88,7 +114,7 @@
       <script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
     </body>
     <hr/>
-    <footer><center>
+    <footer><p><center>
       <iframe
         src="http://ghbtns.com/github-btn.html?user=dbankier&repo=tishadow&type=watch&count=true"
   allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
@@ -99,6 +125,9 @@
   data-show-count="false">Follow @@davidbankier</a>
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tishadow.yydigital.com">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-</center>
+</center></p>
+<p><center>a <a class="yybrand" href="http://www.yydigital.com/">
+<span class="yyblue">YY</span> Digital
+</a> project</center></p>
     </footer>
 </html>
