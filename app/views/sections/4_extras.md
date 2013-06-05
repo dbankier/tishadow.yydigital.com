@@ -59,9 +59,9 @@ are stored in a sand-boxed context
 ### appify
 
 the `tishadow appify` command can be used to create a
-stand-alone app that is integrated with tishadow. the app will automatically
+stand-alone app that is integrated with tishadow. the app automatically
 launches the contained tishadow bundle and connects to a pre-configured
-server. the allows connecting to the deployed app via the repl and/or
+server. this allows connecting to the deployed app via the repl and/or
 push upgrades.
 
 see the following [blog post](http://www.yydigital.com/blog/2013/2/19/TiShadow_Appify) for a

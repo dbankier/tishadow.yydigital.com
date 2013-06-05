@@ -52,7 +52,7 @@ you may also wish to clean/delete all the cached apps and databases
 stored inside the tishadow app and you can do so by using the following command:
 
 ```
-tishadow clean
+tishadow clear
 ```
 
 
