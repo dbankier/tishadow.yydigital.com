@@ -6,6 +6,9 @@ tishadow is made up of three component: `server`, `app` and `cli`
 you use the `cli` to send your code/commands to the `server` that will push it
 to the `app` running on your devices 
 
+for those that need a diagram with picture of a cloud, here you go
+
+![diagram](/assets/img/diagram.png)
 
 ###cli
 
