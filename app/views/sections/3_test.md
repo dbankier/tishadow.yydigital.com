@@ -46,7 +46,15 @@ also the equivalent not assertions are available as well, e.g.
 
 ### auto-testing
 
-there are a number of techniques to automatically push your changes whenever
+you can use the `@` operator to proceed your commands. when any files in
+the `Resources` or `spec` directories are modified the command that follows will
+executed. for example:
+
+```
+tishadow @ spec --update -l nl
+```
+
+there are a number of other techniques to automatically push your changes whenever
 you save any changes to your code. see these links
 
  * [grunt-tishadow](grunt-tishadow) by @astronaughts 

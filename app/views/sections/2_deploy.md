@@ -32,21 +32,9 @@ will be visible next time the file is required
 
 ### keeping it clean
 
-as mentioned above, tishadow will automatically relaunch your
-application. if you want to make sure the previous app deployed is closed prior to
-updating or launching the new one, include the following code snippet in your
-`app.js` file:
-
-```
-if (typeof exports !== "undefined") {
-  exports.close = function() {
-    // Your code to close, e.g, main_window.close();
-  };
-}
-```
-
-if you are using alloy, you can
-use the following [alloy.jmk](https://gist.github.com/dbankier/5087906) file instead
+tishadow now automatically closes all windows and tabgroups when
+deploying a new bundle. any other cleanup operations can be added the
+`close` listener of the window/tabgroup.
 
 you may also wish to clean/delete all the cached apps and databases
 stored inside the tishadow app and you can do so by using the following command:
@@ -55,6 +43,11 @@ stored inside the tishadow app and you can do so by using the following command:
 tishadow clear
 ```
 
+you can also close a running application using the following command:
+
+```
+tishadow close
+```
 
 ### dynamic localisation
 
@@ -107,7 +100,15 @@ and room for all the relevant command below so you do not need to use the
 
 ### automatic updates
 
-there are a number of techniques to automatically push your changes whenever
+you can use the `@` operator to proceed your commands. when any files in
+the `Resources` directory are modified the command that follows will
+executed. for example:
+
+```
+tishadow @ run --update -l nl
+```
+
+there are a number of other techniques to automatically push your changes whenever
 you save any changes to your code. see these links:
 
  * [grunt-tishadow](grunt-tishadow) by @astronaughts 

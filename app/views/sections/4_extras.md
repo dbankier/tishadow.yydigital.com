@@ -64,6 +64,10 @@ launches the contained tishadow bundle and connects to a pre-configured
 server. this allows connecting to the deployed app via the repl and/or
 push upgrades.
 
+**new**: you can run the server with the `--manage-versions` flag and it
+will track bundle versions. apps (or appified apps) that connect with an
+old version will automatically upgrade.
+
 see the following [blog post](http://www.yydigital.com/blog/2013/2/19/TiShadow_Appify) for a
 guided example
 
