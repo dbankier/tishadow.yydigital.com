@@ -49,7 +49,7 @@ fs.readdirSync(SECTIONS_DIR).sort().forEach(function(file) {
 
 
 app.get('/', function(req,res) {
-  res.render('index', {title: 'TiShadow', sections:_.keys(sections)});
+  res.render('index', {title: 'tishadow', sections:_.keys(sections)});
 });
 
 app.get('/:section', function(req, res) {

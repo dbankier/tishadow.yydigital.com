@@ -9,6 +9,7 @@
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lustria">
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/tishadow.css">
         <!-- Google Analytics -->
         <script>
@@ -30,11 +31,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/">tishadow</a>
+          <a class="brand" href="/"><span class="yyblue">ti</span>shadow</a>
           <div class="nav-collapse collapse pull-right">
             <ul class="nav">
               <% for(var i=0; i<sections.length; i++) { %>
-              <li <% if (title.indexOf(sections[0]) >= 0 ) { %> class="active" <% } %> ><a
+              <li <% if (title.indexOf(sections[i]) >= 0 ) { %> class="active" <% } %> ><a
                 href="/<%= sections[i] %>"><%= sections[i] %></a></li>
               <% } %>
             </ul>

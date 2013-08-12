@@ -43,6 +43,10 @@ footer {
   background-color: #FFFFFF;
   text-decoration: none;
 }
+.navbar-inner {
+  background-color: #FCFCFC;
+  background-image: inherit;
+}
 .yybrand {
   color: #ffffff;
   background-color:#333333;
@@ -68,4 +72,23 @@ a.yybrand {
 .yyblue {
   color: #2192E3;
 }
+.navbar .brand {
+  color: #000000;
+}
+.navbar .nav {
+ margin: 10px 10px 0 0
+}
 
+.navbar .brand {
+  padding: 20px 20px
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  color: #2192E3;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+  color: #2192E3;
+}
