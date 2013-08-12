@@ -1,17 +1,15 @@
-@(title: String, sections:List[String])(content: Html)
-
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <title><%= title %></title>
+        <link rel="stylesheet" media="screen" href="./stylesheets/main.css">
+        <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
         <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lustria">
-        <link rel="stylesheet" href="@routes.Assets.at("css/bootstrap.min.css")">
-        <link rel="stylesheet" href="@routes.Assets.at("css/bootstrap-responsive.min.css")">
-        <link rel="stylesheet" href="@routes.Assets.at("css/tishadow.css")">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="/css/tishadow.css">
         <!-- Google Analytics -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,13 +30,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="@routes.Application.index">tishadow</a>
+          <a class="brand" href="/">tishadow</a>
           <div class="nav-collapse collapse pull-right">
             <ul class="nav">
-              @for(section <- sections) {
-              <li @if(title.contains(section)) { class="active" }><a
-                href="@routes.Application.section(section)">@section</a></li>
-              }
+              <% for(var i=0; i<sections.length; i++) { %>
+              <li <% if (title.indexOf(sections[0]) >= 0 ) { %> class="active" <% } %> ><a
+                href="/<%= sections[i] %>"><%= sections[i] %></a></li>
+              <% } %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -46,11 +44,11 @@
     </div>
       <div class="content">
         <div class="container-narrow">
-        @content
+          <%- body %>
       </div>
       </div>
       <script src="http://code.jquery.com/jquery.js"></script>
-      <script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
+      <script src="/js/bootstrap.min.js")"></script>
     </body>
     <hr/>
     <footer><p><center>
@@ -61,7 +59,7 @@
         src="http://ghbtns.com/github-btn.html?user=dbankier&repo=tishadow&type=fork&count=true"
   allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
 <a href="https://twitter.com/davidbankier" class="twitter-follow-button"
-  data-show-count="false">Follow @@davidbankier</a>
+  data-show-count="false">Follow @davidbankier</a>
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tishadow.yydigital.com">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </center></p>
@@ -69,4 +67,4 @@
 <span class="yyblue">YY</span> Digital
 </a> project</center></p>
     </footer>
-</html>
+<

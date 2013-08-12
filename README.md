@@ -2,17 +2,17 @@
 
 This is the source code for http://tishadow.yydigital.com.
 
-It is written in Scala using the [Play
-Framework](http://www.playframework.com)
+It is now written nodejs. 
+
+The origin version was written in Scala using the [Play
+Framework](http://www.playframework.com). You can still see it on the
+play-version branch.
 
 
 ## Contributing Documentation
 
-You _don't_ need to know scala or play to contribute to the
-documentation.
-
 The content and layout of the sections on the website are generated 
-from the markdown documents found in the `app/views/sections` directory
+from the markdown documents found in the `sections` directory
 
  * ordering of the sections is controlled by the numbered prefix
  * the name of each section is controlled by the rest of the file name

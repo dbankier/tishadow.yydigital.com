@@ -1,0 +1,14 @@
+<% layout('layout') -%>
+
+   <div class="row-fluid">
+      <div class="span4 sidebar">
+        <ul class="nav nav-list sidenav affix nav-collapse">
+          <% section.headings.forEach(function(heading) { %> 
+          <li><a href="#<%= heading.split(" ")[0] %>"> <%= heading %></a></li>
+          <% }) %>
+        </ul>
+      </div>
+      <div class="span8">
+        <%- section.html %>
+      </div>
+    </div>
