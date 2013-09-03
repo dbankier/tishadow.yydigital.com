@@ -28,6 +28,8 @@ $ mkdir ~/tishadowapp && tishadow app -d ~/tishadowapp
 either import the project into titanium studio and deploy it to your
 devices or you can use the titanium cli command as follows
 
+**note**: you can use the `--upgrade` flag to upgrade an existing tishadow app
+
 ```
 $ cd ~/tishadowapp
 $ titanium build -p iphone -T device -F universal

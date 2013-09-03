@@ -64,11 +64,31 @@ launches the contained tishadow bundle and connects to a pre-configured
 server. this allows connecting to the deployed app via the repl and/or
 push upgrades.
 
+you may need to provide the `--host`, `--port` and/or `--room` configuration
+of the remote tishadow server you want the app to connect to. since the appify command
+generates a new project you will need to provide the destination path for the new project. E.g.
+
+```
+  $ mkdir ~/myapp
+  $ tishadow appify -d ~/myapp --host myhost.com --port 80 --room my_private_room
+```
+
+
 **new**: you can run the server with the `--manage-versions` flag and it
 will track bundle versions. apps (or appified apps) that connect with an
-old version will automatically upgrade.
+old version will automatically upgrade. you may wish to use the `deploy` command instead
+of the `run` command, which sends new versions to your server without immediately pushing it
+out to connected devices.
 
 see the following [blog post](http://www.yydigital.com/blog/2013/2/19/TiShadow_Appify) for a
 guided example
 
+### tishadow server hosting
 
+the tishadow server can be hosted on a number of paas providers. most however have limited support
+for web sockets. you may need to use the `--long-polling` flag when running the tishadow server.
+
+you may wish to try [ticaster.io](https://www.ticaster.io). it is a service designed specifically for
+tishadow appified apps. ticaster.io manages version deployment so you can use control which versions
+are deployed to the devices and even supports production a/b testing.
+ 
