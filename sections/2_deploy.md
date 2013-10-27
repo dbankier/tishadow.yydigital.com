@@ -114,14 +114,11 @@ you save any changes to your code. see these links:
  * [grunt-tishadow](grunt-tishadow) by @astronaughts 
  * [using supervisor](https://gist.github.com/kwhinnery/5565515) by @kwhinnery
 
+you should really checkout the [JALT Stack](https://github.com/dbankier/JALT)
+
 ### gotchas
 
- * commonjs modules should be required with their full path
  * `Ti.include` is supported if included with the full path 
-    i.e. slash leading
- * all local assets must be `/` leading - see this
-[issue](https://github.com/dbankier/TiShadow/issues/39#issuecomment-13919670)
-for a full explanation
  * only files in the `Resources` directory will be sent to the device
    using TiShadow. That said, localisation files **are** supported.
  * native modules _can_ be supported if built into the tishadow app
@@ -130,7 +127,7 @@ for a full explanation
    the tishadow app tiapp.xml file - see
 [FokkeZB's Ti.Facebook example](http://fokkezb.nl/2013/04/18/how-to-use-ti-facebook-in-tishadow/)
  * custom fonts will be loaded if placed in the `Resources/fonts`
-   directory.
+   directory (iOS only).
  * if there any errors about a Titanium SDK command not being found, add
    them to the Includes.js files and clean and build the TiShadow app
  * any Ti.API logs will be redirected to the server logs and webpage

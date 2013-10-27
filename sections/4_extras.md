@@ -83,6 +83,27 @@ out to connected devices.
 see the following [blog post](http://www.yydigital.com/blog/2013/2/19/TiShadow_Appify) for a
 guided example
 
+### screenshot
+
+
+you can capture screenshots of all connected devices using the following command: 
+
+```
+  $ tishadow screenshot
+```
+
+the screenshots will be saved in `png` format in the `/tmp` directory or the path
+configured using the `--screenshot-path` flag when starting the server.
+
+alternatively, instead of saving the screenshots you can stream them to the browser. use the following command:
+
+```
+  $ tishadow screenshot --screencast 1000 --scale 0.1
+```
+
+in the above example a screenshot is sent every 1000ms and scales the images to 10% of their height/width.
+Go to: `http://localhost:3000/screencast` to view the screencast.
+
 ### tishadow server hosting
 
 the tishadow server can be hosted on a number of paas providers. most however have limited support
