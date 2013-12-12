@@ -62,6 +62,9 @@ two-letter language code to your command:
 
 ### working with alloy
 
+**new**: as of tishadow version 2.3.0, tishadow will detect an alloy project and compiled
+it for you. what follows is for pre 2.3.0.
+
 alloy is fully supported on tishadow. you need to run the alloy compile command
 prior to sending the code. unfortunately, alloy (currently) only supports platform
 specific builds so you need to compile for your specific target platform.
