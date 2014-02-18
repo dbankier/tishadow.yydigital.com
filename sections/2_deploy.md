@@ -62,15 +62,9 @@ two-letter language code to your command:
 
 ### working with alloy
 
-alloy is fully supported on tishadow. you need to run the alloy compile command
-prior to sending the code. unfortunately, alloy (currently) only supports platform
-specific builds so you need to compile for your specific target platform.
-for example, you can run the following command to run your alloy project
-on tishadow
-
-```
-$ alloy compile --config platform=ios && tishadow run
-```
+alloy is fully supported on tishadow and automatically compiles your project.
+if you want to target a specific platform use the `--platform` (`-P`) flag, otherwise it will
+compile and push for all platform in your `tiapp.xml`
 
 ### server configuration and rooms
 
