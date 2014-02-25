@@ -61,7 +61,7 @@ you may want to have a look at @stephenfeather's [getting started series](http:/
 
 you're good to go!
 
-### _new_: tishadow express
+###tishadow express
 
 you can do _a lot_ with tishadow. keep reading to find out more.
 but if it is all too much at the moment and you just want to use it for
