@@ -4,7 +4,7 @@
       <div class="span4 sidebar">
         <ul class="nav nav-list sidenav affix nav-collapse">
           <% section.headings.forEach(function(heading) { %> 
-          <li><a href="#<%= heading.split(" ")[0] %>"> <%= heading %></a></li>
+          <li><a href="#<%= heading.split(" ").join("-") %>"> <%= heading %></a></li>
           <% }) %>
         </ul>
       </div>
