@@ -24,7 +24,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, 'dist')));
 });
 
 app.configure('development', function(){
@@ -49,6 +49,9 @@ fs.readdirSync(SECTIONS_DIR).sort().forEach(function(file) {
 
 
 app.get('/', function(req,res) {
+    app.render('index', {title: 'tishadow', sections:_.keys(sections)}, function(err, str) {
+      fs.writeFileSync(path.join(__dirname, "dist", "index.html"), str);
+    });
   res.render('index', {title: 'tishadow', sections:_.keys(sections)});
 });
 
@@ -57,6 +60,9 @@ app.get('/:section', function(req, res) {
   if (!name || !sections[name]) {
     res.redirect("/");
   } else {
+    app.render('section', {title: 'tishadow | ' + name, sections: _.keys(sections), section: sections[name]}, function(err, str) {
+      fs.writeFileSync(path.join(__dirname, "dist", name,"index.html"), str);
+    });
     res.render('section', {title: 'tishadow | ' + name, sections: _.keys(sections), section: sections[name]});
     console.log(req.params.section);
   }
