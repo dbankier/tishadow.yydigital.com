@@ -3,14 +3,13 @@
 <html>
     <head>
         <title><%= title %></title>
-        <link rel="stylesheet" media="screen" href="./stylesheets/main.css">
-        <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+        <link rel="shortcut icon" type="image/png" href="<%= static ? '/tishadow.yydigital.com/' : '' %>/images/favicon.png">
         <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
         <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lustria">
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="<%= static ? '/tishadow.yydigital.com/' : '' %>/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<%= static ? '/tishadow.yydigital.com/' : '' %>/css/bootstrap-responsive.min.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="/css/tishadow.css">
+        <link rel="stylesheet" href="<%= static ? '/tishadow.yydigital.com/' : '' %>/css/tishadow.css">
         <!-- Google Analytics -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -36,7 +35,7 @@
             <ul class="nav">
               <% for(var i=0; i<sections.length; i++) { %>
               <li <% if (title.indexOf(sections[i]) >= 0 ) { %> class="active" <% } %> ><a
-                href="/<%= sections[i] %>"><%= sections[i] %></a></li>
+                href="<%= static ? '/tishadow.yydigital.com/' : '' %>/<%= sections[i] %>"><%= sections[i] %></a></li>
               <% } %>
             </ul>
           </div><!--/.nav-collapse -->
