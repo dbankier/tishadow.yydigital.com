@@ -49,8 +49,10 @@ fs.readdirSync(SECTIONS_DIR).sort().forEach(function(file) {
 
 
 app.get('/', function(req,res) {
-    app.render('index', {status: true, title: 'tishadow', sections:_.keys(sections)}, function(err, str) {
+    app.render('index', {static: true, title: 'tishadow', sections:_.keys(sections)}, function(err, str) {
+      console.log(err);
       fs.writeFileSync(path.join(__dirname, "dist", "index.html"), str);
+
     });
   res.render('index', {static: false, title: 'tishadow', sections:_.keys(sections)});
 });
