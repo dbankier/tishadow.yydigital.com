@@ -49,12 +49,12 @@ fs.readdirSync(SECTIONS_DIR).sort().forEach(function(file) {
 
 
 app.get('/', function(req,res) {
-    app.render('index', {static: true, title: 'tishadow', sections:_.keys(sections)}, function(err, str) {
+    app.render('index', {title: 'tishadow', sections:_.keys(sections)}, function(err, str) {
       console.log(err);
       fs.writeFileSync(path.join(__dirname, "dist", "index.html"), str);
 
     });
-  res.render('index', {static: false, title: 'tishadow', sections:_.keys(sections)});
+  res.render('index', {title: 'tishadow', sections:_.keys(sections)});
 });
 
 app.get('/:section', function(req, res) {
@@ -62,10 +62,10 @@ app.get('/:section', function(req, res) {
   if (!name || !sections[name]) {
     res.redirect("/");
   } else {
-    app.render('section', {static: true, title: 'tishadow | ' + name, sections: _.keys(sections), section: sections[name]}, function(err, str) {
+    app.render('section', { title: 'tishadow | ' + name, sections: _.keys(sections), section: sections[name]}, function(err, str) {
       fs.writeFileSync(path.join(__dirname, "dist", name,"index.html"), str);
     });
-    res.render('section', {static: false, title: 'tishadow | ' + name, sections: _.keys(sections), section: sections[name]});
+    res.render('section', { title: 'tishadow | ' + name, sections: _.keys(sections), section: sections[name]});
     console.log(req.params.section);
   }
 });
